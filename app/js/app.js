@@ -3,34 +3,34 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 	//----------------------SLIDER-hero----------------------
-		// var mySwiper = new Swiper('.hero__slider', {
-		// 	slidesPerView: 1,
-		// 	spaceBetween: 30,
-		// 	loop: true,
-		// 	effect: 'fade',
-		// 	autoplay: {
-		// 		delay: 5000,
-		// 	},
-		// 	pagination: {
-		// 		el: '.hero__pagination',
-		// 		clickable: 'true',
-		// 	},
-		// 	navigation: {
-		// 		nextEl: '.hero__next',
-		// 		prevEl: '.hero__prev',
-		// 	},
-		// 	breakpoints: {
-		// 		320: {
-		// 			slidesPerView: 2,
-		// 			spaceBetween: 20
-		// 		},
-		// 	}
-		// });
+		var mySwiper = new Swiper('.hero__slider', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			loop: true,
+			effect: 'fade',
+			autoplay: {
+				delay: 5000,
+			},
+			pagination: {
+				el: '.hero__pagination',
+				clickable: 'true',
+			},
+			navigation: {
+				nextEl: '.hero__next',
+				prevEl: '.hero__prev',
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+			}
+		});
 
 	//----------------------SCROLL-----------------------
 		const scrollTo = (scrollTo) => {
 			let list = document.querySelector(scrollTo);
-			list = '.' + list.classList[0]  + ' li a[href^="#"';
+			list = '.' + list.classList[0]  + ' a[href^="#"';
 	
 			document.querySelectorAll(list).forEach(link => {
 	
@@ -55,15 +55,18 @@ document.addEventListener("DOMContentLoaded", function() {
 						
 						let button = document.querySelector('.hamburger'),
 								nav = document.querySelector('.header__nav'),
-								header = document.querySelector('.header');
+								header = document.querySelector('.header'),
+								body = document.querySelector('body');
 	
 						button.classList.remove('hamburger--active');
 						nav.classList.remove('header__nav--active');
 						header.classList.remove('header--menu');
+						body.classList.remove('no-scroll');
 				});
 			});
 		};
-		// scrollTo('.header__nav');
+		scrollTo('.header__nav');
+		scrollTo('.hero__btn');
 	
 	//----------------------FIXED-HEADER-----------------------
 		const headerFixed = (headerFixed, headerActive) => {
@@ -82,22 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 	
 		};
-		// headerFixed('.header', '.header--active');
+		headerFixed('.header', '.header--active');
 	
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
 			const button = document.querySelector(hamburgerButton),
 						nav = document.querySelector(hamburgerNav),
 						header = document.querySelector(hamburgerHeader);
-	
+			
+						const body = document.querySelector('body');
+
 			button.addEventListener('click', (e) => {
 				button.classList.toggle('hamburger--active');
 				nav.classList.toggle('header__nav--active');
 				header.classList.toggle('header--menu');
+				body.classList.toggle('no-scroll');
 			});
 	
 		};
-		// hamburger('.hamburger', '.header__nav', '.header');
+		hamburger('.hamburger', '.header__nav', '.header');
 		
 	//----------------------MODAL-----------------------
 		const modals = (modalSelector) => {
@@ -111,13 +117,15 @@ document.addEventListener("DOMContentLoaded", function() {
 					const link = document.querySelector('.' + wrap);
 					let close = item.querySelector('.close');
 
-					link.addEventListener('click', (e) => {
-						if (e.target) {
-							e.preventDefault();
-						}
-						item.style.display = 'flex';
-						document.body.classList.add('modal--open')
-					});
+					if (link) {
+						link.addEventListener('click', (e) => {
+							if (e.target) {
+								e.preventDefault();
+							}
+							item.style.display = 'flex';
+							document.body.classList.add('modal--open')
+						});
+					}
 
 					close.addEventListener('click', () => {
 						item.style.display = 'none';

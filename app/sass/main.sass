@@ -1,9 +1,13 @@
 @import base
 
+.no-scroll
+	+r(992)
+		overflow: hidden
+
 // -----CONTAINER-----
 .container
 	width: 100%
-	max-width: 1200px
+	max-width: 1210px
 	padding: 0 15px
 	margin: 0 auto
 
@@ -25,18 +29,28 @@
 	display: flex
 	justify-content: center
 	align-items: center
-	height: 45px
-	font-size: 18px
-	color: $accent
+	min-height: 55px
+	background-color: $accent
+	font-size: 20px
+	color: #F6F6F6
 	font-weight: 700
-	border-radius: 20px
 	max-width: fit-content
+	padding: 0 55px
+	text-shadow: 0 5px 5px rgba(#000, .5)
+	-webkit-text-stroke: .5px black
 
-	&:hover,
-	&:focus
-		border: 1px solid $accent
+	+rh(850)
+		min-height: 45px
+		font-size: 18px
+
+	&:hover
+		border: 0
 		background: $accent
 		color: #fff
+		box-shadow: 0 0 10px 0 rgba(#fff, .5)
+
+	&:active
+		box-shadow: 0 0 5px 0 rgba(#fff, .5)
 
 // -----HAMBURGER-----
 .hamburger
@@ -49,11 +63,10 @@
 	border: none
 	background-color: transparent
 	transition: all .3s
+	z-index: 100
 
-	&:focus,
-	&:hover
-		outline: none
-		opacity: .7
+	+r(992)
+		display: block
 
 	&__box
 		position: relative
@@ -94,7 +107,6 @@
 			height: 3px
 			transition: transform 0s 0.1s
 
-
 	&--active
 		z-index: 1001
 
@@ -106,29 +118,482 @@
 			&::after
 				transform: translate3d(0, 10px, 0) rotate(-45deg)
 
+// -----TITLE-----
+.h1, .h2, .h3
+	font-family: $title
+	text-transform: uppercase
 
+.h1
+	font-size: 50px
+	text-transform: uppercase
+	margin-bottom: 35px
+	letter-spacing: 1px
+
+	+rh(850)
+		margin-bottom: 15px
+		font-size: 44px
+
+	+r(1200)
+		font-size: 44px
+	
+	+r(992)
+		font-size: 38px
+
+.h2
+	position: relative
+	text-align: center
+	color: #181717
+	font-size: 35px
+	padding-bottom: 10px
+	margin-bottom: 50px
+
+	+rh(850)
+		font-size: 32px
+		margin-bottom: 30px
+		padding-bottom: 5px
+
+	+r(1200)
+		font-size: 32px
+
+	+r(992)
+		font-size: 28px
+		margin-bottom: 30px
+		padding-bottom: 5px
+
+	+r(767)
+		font-size: 24px
+	
+	+r(480)
+		font-size: 20px
+
+	&::before
+		content: ''
+		position: absolute
+		left: 50%
+		bottom: 0
+		transform: translate(-50%, 0)
+		height: 2px
+		width: 120px
+		background-color: $accent
+
+.h3
+	font-size: 25px
+	color: #181717
+	margin-bottom: 25px
+
+	+r(1200)
+		font-size: 22px
+
+	+r(992)
+		font-size: 20px
+		margin-bottom: 15px
+
+	+r(767)
+		font-size: 18px
+
+
+// -----SECTION-----
 .header
 	position: fixed
 	top: 0
 	right: 0
 	left: 0
+	padding: 20px 0
+	z-index: 1000
+	+transition
+
+	+rh(850)
+		padding: 15px 0
+
+	+r(992)
+		padding: 10px 0
 
 	&__container
+		position: relative
 		+between
 
 	&__logo
-		width: 100px
+		width: 60px
+		margin: 0 auto
+		margin-bottom: 25px
+
+		+rh(850)
+			margin-bottom: 15px
+
+		+r(992)
+			margin-bottom: 0
 
 		img
 			width: 100%
-			height: auto
+
+	&__nav
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 100%
+		+transition
+
+		+r(992)
+			position: fixed
+			top: 0
+			bottom: 0
+			right: 100%
+			width: 100%
+			height: 100%
+			background-color: rgba(#0C0B0B, .8)
+			justify-content: flex-start
+			overflow: auto
+
+		&--active
+			+r(992)
+				right: 0%
+
+		ul
+			display: flex
+			border-top: 1px solid #FAFAFA
+			border-bottom: 1px solid #FAFAFA
+			background-color: transparent
+			height: 100%
+			+transition
+
+			+r(992)
+				border: 0
+				flex-direction: column
+				background-color: #181717 !important
+				padding: 30px
+				max-width: 80%
+				min-height: 100%
+				height: auto
+
+		a
+			position: relative
+			display: block
+			color: #ffffff
+			padding: 25px 7px
+			font-size: 16px
+
+			+rh(850)
+				padding: 15px 7px
+
+			+r(1200)
+				font-size: 14px
+
+			+r(992)
+				padding: 10px 0
+				margin-bottom: 10px
+				font-size: 18px
+
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				height: 0
+				width: 100%
+				background-color: $accent
+				+transition
+
+			&::after
+				top: -1px
+				opacity: 0
+
+			&::before
+				bottom: -1px
+
+			&:hover
+				&::after
+					height: 1px
+					opacity: 1
+				&::before
+					height: 6px
+
+			&:active
+				&::after
+					height: 1px
+					opacity: 1
+				&::before
+					height: 3px
+
+	&--active
+		padding: 0
+
+		+r(992)
+			padding: 10px 0
+			background-color: rgba(#0C0B0B, .95)
+			box-shadow: 0 0 10px 0 rgba(#0C0B0B, .95)
+
+		.header
+			&__logo
+				margin-top: -90px
+
+				+r(992)
+					margin-top: 0
+			
+			&__nav
+				ul
+					background-color: rgba($text, .98)
+
+				a
+					padding: 15px 7px
 
 
-.section
-	padding: 40px 0
+.hero
+	+cover
+	background-image: url(../img/hero__bg.jpg)
+	padding: 12% 0 5vh
+	min-height: 100vh
+	display: flex
+	justify-content: center
+	align-items: center
+	text-align: center
+	color: #ffffff
 
+	+rh(850)
+		padding-top: 170px
+
+	+r(992)
+		padding: 100px 0
+		min-height: auto
+
+	&__description
+		max-width: 560px
+		margin: 0 auto
+
+	&__top-text
+		font-size: 14px
+		margin-bottom: 15px
+
+	&__subtitle
+		font-size: 20px
+		margin-bottom: 40px
+		color: #fafafa
+
+		+rh(850)
+			font-size: 16px
+			margin-bottom: 20px
+
+		+r(992)
+			font-size: 16px
+
+	&__btn
+		position: relative
+		display: flex
+		justify-content: center
+		align-items: center
+		padding-bottom: 80px
+
+		+rh(850)
+			padding-bottom: 50px
+
+	&__down
+		position: absolute
+		left: 50%
+		bottom: 0
+		transform: translate(-50%, 0)
+		+transition
+
+		&:hover
+			transform: translate(-50%, 15px)
+
+		&:active
+			transform: translate(-50%, -5px)
+
+
+.info
+	padding: 8vh 0
+	min-height: 100vh
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	+r(1200)
+		padding: 5vh 0
+
+	+r(992)
+		padding: 40px 0
+		min-height: auto
+
+	&__container
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+
+	&__description
+		width: 53%
+
+		+r(767)
+			width: 100%
+			order: 1
+
+		p,	ul
+			margin-bottom: 20px
+			font-size: 18px
+			color: #494848
+
+			+rh(850)
+				font-size: 16px
+
+			+r(1200)
+				font-size: 16px
+				margin-bottom: 10px
+
+			+r(992)
+				font-size: 14px
+
+
+			&:last-child
+				margin-bottom: 0
+
+		a
+			color: #494848
+
+			&:hover
+				color: $accent
+				
+			&:active
+				color: rgba($accent, .7)
+
+	&__img
+		width: 43%
+		border: 10px solid $accent
+		padding: 25px
+
+		+r(767)
+			width: 100%
+			margin-bottom: 25px
+
+		img
+			width: 100%
+
+
+.news
+	background-color: #F7F8F9
+	padding: 8vh 0
+	min-height: 100vh
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	+r(1200)
+		padding: 5vh 0
+
+	+r(992)
+		padding: 40px 0
+		min-height: auto
+
+	&__list
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+
+		+r(767)
+			justify-content: center
+
+	&__item
+		width: 32%
+		background-color: #fff
+
+		+r(767)
+			width: 100%
+			max-width: 380px
+			margin-bottom: 20px
+
+		&:last-child
+			margin-bottom: 0
+
+		&_img
+			display: flex
+			justify-content: center
+
+			img
+				width: 100%
+				height: auto
+
+		&_desc
+			padding: 30px 25px
+
+			+rh(850)
+				padding: 15px
+			
+			+r(1200)
+				padding: 15px
+
+			h3
+				text-transform: uppercase
+				font-size: 20px
+				color: #181717
+				margin-bottom: 20px
+
+				+rh(850)
+					font-size: 16px
+					margin-bottom: 10px
+
+				+r(1200)
+					font-size: 16px
+					margin-bottom: 10px
+
+			a
+				color: #181717
+
+				&:hover
+					color: $accent
+			
+			p
+				color: #494848
+				margin-bottom: 15px
+				font-weight: 500
+
+				+rh(850)
+					margin-bottom: 10px
+					font-size: 14px
+
+		&_more
+			+between
+
+			a
+				color: $accent
+				text-decoration: underline
+
+				&:hover
+					color: #181717
+
+					img
+						margin-left: 8px
+
+				&:active
+					color: #181717
+
+					img
+						margin-left: 12px
+
+			img
+				+transition
+				margin-left: 5px
+			
+			time
+				color: #7e7e7e
+				font-weight: 500
+
+
+.actions
+	padding: 8vh 0
+	min-height: 100vh
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+	+r(1200)
+		padding: 5vh 0
+
+	+r(992)
+		padding: 40px 0
+		min-height: auto
 
 .footer
+	height: 300px
+
 	&__container
 		+between
 

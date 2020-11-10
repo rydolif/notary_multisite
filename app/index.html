@@ -4,12 +4,17 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Start Optimazed</title>
+	<title>Перов Михаил Викторович</title>
 	<meta name="description" content="Startup HTML Optimized">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="images/favicon.png">
-	<meta property="og:image" content="images/dest/preview.jpg">
+	<link rel="icon" href="img/favicon.svg">
+	<meta property="og:image" content="img/preview.jpg">
 	<link rel="stylesheet" href="css/app.min.css?v=1">
+
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+
 	<script src="js/app.min.js" defer></script>
 
 </head>
@@ -20,12 +25,19 @@
 		<div class="header__container container">
 
 			<a href="/" class="header__logo">
-				
+				<img src="img/logo.png" alt="">
 			</a>
 
 			<nav class="header__nav">
 				<ul>
-					<li><a href="#about">О компании</a></li>
+					<li><a href="#hero">Главная</a></li>
+					<li><a href="#info">Объявление</a></li>
+					<li><a href="#about">Новости</a></li>
+					<li><a href="#about">Нотариальные действия</a></li>
+					<li><a href="#about">Тарифы</a></li>
+					<li><a href="#about">Контакты</a></li>
+					<li><a href="#about">Отправить документы</a></li>
+					<li><a href="#about">Публичные реестры</a></li>
 				</ul>
 			</nav>
 
@@ -38,14 +50,158 @@
 		</div>
 	</header>
 
-	<section class="section">
+	<section class="hero" id="hero">
 		<div class="container">
 
-			<a href="#" class="modal--edits">Добавить</a>
-			<a href="#" class="modal--add">Редактировать</a>
-			<a href="#" class="modal--next">Следующий</a>
-			<a href="#" class="modal--thanks">Благодарность</a>
+			<div class="hero__description">
+				<p class="hero__top-text">Нотариус Нотариальной палаты <br> Свердловской области:</p>
+				<h1 class="h1">Перов Михаил Викторович</h1>
+				<p class="hero__subtitle">
+					Обеспечение защиты прав и законных интересов граждан и юридических лиц путем совершения предусмотренных 
+					законодательными актами нотариальных действий от имени Российской Федерации.
+				</p>
+				<div class="hero__btn">
+					<a href="#" class="btn">Записаться</a>
+					<a href="#info" class="hero__down">
+						<img src="img/hero__down.svg" alt="">
+					</a>
+				</div>
+			</div>
 
+		</div>
+	</section>
+
+	<section class="info" id="info">
+		<div class="container">
+
+			<h2 class="h2">Важное объявление <br> нотариальной конторы:</h2>
+
+			<div class="info__container">
+				<div class="info__description">
+					<h3 class="h3">ДОРОГИЕ КЛИЕНТЫ!</h3>
+					<p>
+						В период пандемии коронавируса нотариальная контора работает в режиме дежурной с соблюдением 
+						всех санитарно-гигиенических предписаний: использование масок, дезинфекция дверных ручек 
+						и поверхностей, проветривание и обеззараживание помещений с использованием ультрафиолетовых 
+						рециркуляторов Дезар.
+					</p>
+					<p>
+						В связи с принимаемыми мерами ПРИЕМ КЛИЕНТОВ ОСУЩЕСТВЛЯЕТСЯ СТРОГО ПО ПРЕДВАРИТЕЛЬНОЙ ЗАПИСИ. 
+						Запись производится по телефонам: <a href="tel:83433507223">8 (343) 350-72-23</a>
+					</p>
+					<p>
+						Направление всех интересующих Вас вопросов и документов возможно:
+					</p>
+					<ul>
+						<li>-	электронной почтой по адресу perov@npso66.ru,</li>
+						<li>-	либо здесь, на сайте нотариуса (форма ниже)</li>
+					</ul>
+					<p>
+						Обращаем Ваше внимание на то, что ВХОД В ОФИС ОГРАНИЧЕН в связи с соблюдением требований по 
+						совместному пребыванию определенного количества людей в одном помещении. Принимаемые нами меры 
+						направлены на защиту от опасности заражения инфекцией. Надеемся на взаимодействие и готовность 
+						соблюдать новые правила.
+					</p>
+					<p>
+						МЫ ЗАБОТИМСЯ О ВАШЕМ ЗДОРОВЬЕ!
+					</p>
+				</div>
+				<div class="info__img">
+					<img src="img/info__img.jpg" alt="">
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="news">
+		<div class="news__container container">
+
+			<h2 class="h2">Новости нотариуса:</h2>
+
+			<div class="news__list">
+				<div class="news__item">
+					<a href="#" class="news__item_img">
+						<img src="img/news__item1.jpg" alt="">
+					</a>
+					<div class="news__item_desc">
+						<h3>
+							<a href="#">
+								ПОПУЛЯРНОСТЬ БРАЧНЫХ ДОГОВОРОВ В РОССИИ ОБСУДИЛИ В РАМКАХ ВЫСТАВКИ НЕДВИЖИМОСТИ
+							</a>
+						</h3>
+						<p>
+							Цивилизованные и комфортные решения брачно-семейных споров становятся все более востребованными 
+							среди россиян. Именно этим вопросам был посвящен большой блок лекций в последний день работы 
+							масштабной выставки-ярмарки «Недвижимость от лидеров», прошедшей в Москве. Нотариусы рассказали...
+						</p>
+						<div class="news__item_more">
+							<a href="#">Читать далее <img src="img/more.svg" alt=""></a>
+							<time datetime="08.10.2020">08.10.2020</time>
+						</div>
+					</div>
+				</div>
+
+				<div class="news__item">
+					<a href="#" class="news__item_img">
+						<img src="img/news__item2.jpg" alt="">
+					</a>
+					<div class="news__item_desc">
+						<h3>
+							<a href="#">
+								ФОРУМ ЛИДЕРОВ НЕДВИЖИМОСТИ: НОТАРИУСЫ РАЗЪЯСНИЛИ ВАЖНЫЕ АСПЕКТЫ СДЕЛОК
+							</a>
+						</h3>
+						<p>
+							Тема безопасных и удобных сделок с жильем остается одной из наиболее важных для россиян. 
+							Именно поэтому на масштабной выставке-ярмарке «Недвижимость от лидеров», которая прошла 
+							с 1 по 4 октября в Москве, в рамках Форума лидеров недвижимости нотариусы провели ряд лекций 
+							для граждан, где рассказали...
+						</p>
+						<div class="news__item_more">
+							<a href="#">Читать далее <img src="img/more.svg" alt=""></a>
+							<time datetime="08.10.2020">08.10.2020</time>
+						</div>
+					</div>
+				</div>
+
+				<div class="news__item">
+					<a href="#" class="news__item_img">
+						<img src="img/news__item3.jpg" alt="">
+					</a>
+					<div class="news__item_desc">
+						<h3>
+							<a href="#">
+								«ДЕЛОВАЯ РОССИЯ»: ЦИФРОВАЯ ТРАНСФОРМАЦИЯ НОТАРИАТА В ИНТЕРЕСАХ БИЗНЕСА И ГРАЖДАН
+							</a>
+						</h3>
+						<p>
+							Рынок недвижимости становится все менее защищенным: об этом свидетельствуют данные новейших 
+							исследований. В этой связи большой интерес вызывают мошеннические схемы, с помощью которых 
+							граждане массово теряют свое жилье и деньги. Большинство преступлений с недвижимостью совершаются...
+						</p>
+						<div class="news__item_more">
+							<a href="#">Читать далее <img src="img/more.svg" alt=""></a>
+							<time datetime="08.10.2020">08.10.2020</time>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="actions">
+		<div class="container">
+
+			<h2 class="h2">Нотариальные действия:</h2>
+
+			<div class="actions__slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">Slide 1</div>
+				</div>
+			</div>
 
 		</div>
 	</section>
