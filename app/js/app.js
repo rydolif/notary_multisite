@@ -3,26 +3,55 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 	//----------------------SLIDER-hero----------------------
-		var mySwiper = new Swiper('.hero__slider', {
+		var mySwiper = new Swiper('.actions__slider', {
 			slidesPerView: 1,
 			spaceBetween: 30,
-			loop: true,
-			effect: 'fade',
-			autoplay: {
-				delay: 5000,
-			},
+			// loop: true,
+			// effect: 'fade',
+			// autoplay: {
+			// 	delay: 5000,
+			// },
 			pagination: {
-				el: '.hero__pagination',
-				clickable: 'true',
+				el: '.actions__pagination',
+				type: 'progressbar',
 			},
 			navigation: {
-				nextEl: '.hero__next',
-				prevEl: '.hero__prev',
+				nextEl: '.actions__button_next',
+				prevEl: '.actions__button_prev',
 			},
 			breakpoints: {
-				320: {
+				992: {
 					slidesPerView: 2,
 					spaceBetween: 20
+				},
+			}
+		});
+
+	//----------------------SLIDER-hero----------------------
+		var mySwiper = new Swiper('.registers__slider', {
+			slidesPerView: 1,
+			spaceBetween: 30,
+			// loop: true,
+			// effect: 'fade',
+			// autoplay: {
+			// 	delay: 5000,
+			// },
+			pagination: {
+				el: '.registers__pagination',
+				type: 'progressbar',
+			},
+			navigation: {
+				nextEl: '.registers__button_next',
+				prevEl: '.registers__button_prev',
+			},
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+					spaceBetween: 15
+				},
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 15
 				},
 			}
 		});
